@@ -1,0 +1,9 @@
+{
+  "goal": "Place a limit order and verify server fields strictly match the request",
+  "must_equal": ["ticker", "side", "action", "type", "price_field"],
+  "quantity_conservation": "filled_count + remaining_count == requested_count (when both are present)",
+  "notes": [
+    "Server-generated fields (order_id, timestamps, status) are excluded from exact-equality checks",
+    "Use client_order_id for idempotent retries"
+  ]
+}
